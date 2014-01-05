@@ -1,0 +1,5 @@
+Basic configuration for using Debian Wheezy (amd64) with VMWare Fusion
+
+Base box has the following provisioners:
+* ansible
+* puppet
