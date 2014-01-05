@@ -19,4 +19,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ansible.verbose = "v"
         ansible.host_key_checking = false
     end
+
+    config.vm.provision "ansible" do |ansible|
+        ansible.playbook = "devstack.yaml"
+        ansible.verbose = "vvvv"
+        ansible.host_key_checking = false
+    end
 end

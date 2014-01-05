@@ -1,0 +1,16 @@
+---
+- hosts: all
+  vars:
+    home: "/home/vagrant"
+    devstack_dir: "{{ home }}/devstack"
+
+  tasks:
+    - name: clone devstack
+      git: repo="https://github.com/openstack-dev/devstack.git"
+             dest="{{ devstack_dir }}"
+
+    - name: copy localrc to checkout
+      copy: src="./localrc" dest="{{ devstack_dir }}"
+
+    - name: run stack.sh
+      shell: "./stack.sh 2>&1 >stack.log chdir={{ devstack_dir }}" 
