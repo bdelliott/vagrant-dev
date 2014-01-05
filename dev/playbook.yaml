@@ -1,0 +1,10 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: install vim
+      apt: pkg=vim state=present
+
+    - name: install git
+      apt: pkg=git state=present
+
