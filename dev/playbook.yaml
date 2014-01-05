@@ -1,10 +1,22 @@
 ---
 - hosts: all
-  sudo: yes
   tasks:
     - name: install vim
       apt: pkg=vim state=present
+      sudo: yes
 
     - name: install git
       apt: pkg=git state=present
+      sudo: yes
 
+    - name: copy vimrc
+      copy: src=~/.vimrc dest=~vagrant/.vimrc
+
+    - name: copy bashrc
+      copy: src=./bashrc dest=~vagrant/.bashrc
+
+    - name: set name in git
+      command: git config --global user.name "Brian D. Elliott"
+
+    - name: set email in git
+      command: git config --global user.email "bdelliott@gmail.com"
