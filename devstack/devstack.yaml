@@ -12,5 +12,5 @@
     - name: copy localrc to checkout
       copy: src="./localrc" dest="{{ devstack_dir }}"
 
-    - name: run stack.sh
-      shell: "./stack.sh 2>&1 >stack.log chdir={{ devstack_dir }}" 
+    #- name: run stack.sh
+    #  shell: "./stack.sh 2>&1 >stack.log chdir={{ devstack_dir }}" 

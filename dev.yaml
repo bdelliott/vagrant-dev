@@ -20,3 +20,9 @@
 
     - name: set email in git
       command: git config --global user.email "bdelliott@gmail.com"
+
+    - name: copy pub key
+      copy: src=~/.ssh/id_dsa.pub dest=~vagrant/.ssh/id_dsa.pub
+
+    - name: copy priv key
+      copy: src=~/.ssh/id_dsa dest=~vagrant/.ssh/id_dsa
