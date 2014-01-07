@@ -1,0 +1,8 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - apt: pkg=libmysqlclient-dev state=present
+    - apt: pkg=libpq-dev state=present
+    - apt: pkg=libxml2-dev state=present
+    - apt: pkg=libxslt1-dev state=present
