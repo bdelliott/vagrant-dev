@@ -14,9 +14,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         v.vmx["vhv.enable"] = "TRUE"
     end
 
+    # General dev box related setups
     config.vm.provision "ansible" do |ansible|
         ansible.playbook = "../dev.yaml"
         ansible.verbose = "v"
         ansible.host_key_checking = false
+    end
+
+    # Setup useful python related bits
+    config.vm.provision "ansible" do |ansible|
+        ansible.playbook = "../python.yaml"
+        ansible.host_key_checking = false
+        #ansible.verbose = "v"
     end
 end

@@ -1,0 +1,12 @@
+---
+- hosts: all
+  sudo: yes
+
+  tasks:
+    - name: install pip
+      apt: pkg=python-pip state=present
+
+    - pip: name=setuptools
+    - pip: name=ipython
+    - pip: name=virtualenv
+    - pip: name=virtualenvwrapper

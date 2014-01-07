@@ -1,6 +1,10 @@
 ---
 - hosts: all
   tasks:
+    - name: set hostname
+      hostname: name=dev
+      sudo: yes
+
     - name: install vim
       apt: pkg=vim state=present
       sudo: yes
