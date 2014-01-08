@@ -16,8 +16,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # General dev box related setups
     config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "../playbooks/dev.yaml"
-        #ansible.verbose = "v"
+        ansible.playbook = "../dev.yml"
+        ansible.verbose = "v"
         ansible.host_key_checking = false
     end
 end
