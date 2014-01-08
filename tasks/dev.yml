@@ -18,10 +18,10 @@
   copy: src=../bashrc dest=~vagrant/.bashrc
 
 - name: set name in git
-  command: git config --global user.name "Brian D. Elliott"
+  command: git config --global user.name "{{ git_username }}"
 
 - name: set email in git
-  command: git config --global user.email "bdelliott@gmail.com"
+  command: git config --global user.email "{{ git_email }}"
 
 - name: copy pub key
   copy: src=~/.ssh/id_dsa.pub dest=~vagrant/.ssh/id_dsa.pub
