@@ -16,22 +16,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     # General dev box related setups
     config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "../dev.yaml"
+        ansible.playbook = "../playbooks/dev.yaml"
         #ansible.verbose = "v"
         ansible.host_key_checking = false
-    end
-
-    # Setup useful python related bits
-    config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "../python.yaml"
-        ansible.host_key_checking = false
-        #ansible.verbose = "v"
-    end
-
-    # Setup Nova releated dependencies
-    config.vm.provision "ansible" do |ansible|
-        ansible.playbook = "../nova.yaml"
-        ansible.host_key_checking = false
-        #ansible.verbose = "v"
     end
 end

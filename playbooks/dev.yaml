@@ -17,7 +17,7 @@
       copy: src=~/.vimrc dest=~vagrant/.vimrc
 
     - name: copy bashrc
-      copy: src=./bashrc dest=~vagrant/.bashrc
+      copy: src=../bashrc dest=~vagrant/.bashrc
 
     - name: set name in git
       command: git config --global user.name "Brian D. Elliott"

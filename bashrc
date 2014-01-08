@@ -1,3 +1,8 @@
+PATH=/usr/local/bin:/usr/bin:/bin
+PATH=${PATH}:/usr/sbin:/sbin
+PATH=${HOME}/bin:${PATH}
+export PATH
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -112,3 +117,5 @@ fi
 
 # add git bash completion.
 . /etc/bash_completion.d/git
+
+export EDITOR=/usr/bin/vim
